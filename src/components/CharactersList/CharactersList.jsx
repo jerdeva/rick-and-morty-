@@ -2,6 +2,7 @@ import './CharactersList.css'
 import React, { useState } from 'react';
 import { Modal } from '../Modal/Modal';
 import { ModalInfo } from '../Modal/ModalInfo';
+import PropTypes from 'prop-types';
 
 const CharactersList = ({ characters }) => {
   const [showModal, setShowModal] = useState(false);
@@ -32,5 +33,9 @@ const CharactersList = ({ characters }) => {
     </ul>
   );
 };
+
+CharactersList.propTypes = {
+  characters: PropTypes.string.isRequired
+}
 
 export default CharactersList;

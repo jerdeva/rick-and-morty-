@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../CharactersList/CharactersList.css'
+import PropTypes from 'prop-types';
 
 const FilterCharacters = ({ filter }) => {
     const [selectedParam, setSelectedParam] = useState('');
@@ -28,5 +29,9 @@ const FilterCharacters = ({ filter }) => {
         </form>
     );
 };
+
+FilterCharacters.propTypes = {
+  filter: PropTypes.string.isRequired
+}
 
 export default FilterCharacters;

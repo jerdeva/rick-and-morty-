@@ -1,6 +1,7 @@
 import { useState } from "react"
 import '../CharactersList/CharactersList.css'
-
+import React from "react";
+import PropTypes from 'prop-types';
 
 export const SortCharacters = ({ update, data }) => {
     
@@ -21,3 +22,8 @@ export const SortCharacters = ({ update, data }) => {
         </div>
     );
 };
+
+SortCharacters.propTypes = {
+  update: PropTypes.string.isRequired,
+  data: PropTypes.string.isRequired,
+}

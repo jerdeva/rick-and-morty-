@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const ModalInfo = ({ character, closeModal }) => {
   return (
@@ -17,3 +18,7 @@ export const ModalInfo = ({ character, closeModal }) => {
   );
 };
 
+ModalInfo.propTypes = {
+  character: PropTypes.string.isRequired,
+  closeModal: PropTypes.string.isRequired,
+}
