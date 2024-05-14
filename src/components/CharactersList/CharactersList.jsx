@@ -21,14 +21,12 @@ const CharactersList = ({ characters }) => {
             alt={character.name} 
             onClick={() => toggleModal(character)}
           />
-          <p>{character.name}</p>
-          <p>{character.status}</p>
-          <p>{character.gender}</p>
+          <h2>{character.name}</h2>         
         </li>
       ))}
-      {showModal && selectedCharacter && (
-        <Modal onClick={toggleModal}>
-          <ModalInfo character={selectedCharacter} />
+       {showModal && selectedCharacter && (
+        <Modal onClick={() => setShowModal(false)}>
+          <ModalInfo character={selectedCharacter} closeModal={() => setShowModal(false)} />
         </Modal>
       )}
     </ul>

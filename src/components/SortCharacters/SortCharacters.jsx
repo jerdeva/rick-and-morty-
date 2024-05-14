@@ -1,4 +1,6 @@
 import { useState } from "react"
+import '../CharactersList/CharactersList.css'
+
 
 export const SortCharacters = ({ update, data }) => {
     
@@ -15,7 +17,7 @@ export const SortCharacters = ({ update, data }) => {
     
     return (
         <div>
-            <button onClick={handleSort}>Sort by name</button>
+            <button className="btn" onClick={handleSort}>Sort by name</button>
         </div>
     );
 };

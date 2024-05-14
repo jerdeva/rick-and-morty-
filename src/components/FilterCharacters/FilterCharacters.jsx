@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../CharactersList/CharactersList.css'
 
 const FilterCharacters = ({ filter }) => {
     const [selectedParam, setSelectedParam] = useState('');
@@ -23,7 +24,7 @@ const FilterCharacters = ({ filter }) => {
                     <option value="unknown">Unknown</option>
                 </select>
             </label>
-            <button type="submit">Apply filter</button>
+            <button className="btn" type="submit">Apply filter</button>
         </form>
     );
 };

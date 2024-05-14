@@ -1,12 +1,14 @@
 import React from 'react';
+// import { ModalInfo } from './ModalInfo';
+import { ModalOverlay, ModalContainer } from './Modal.styled';
 
-export const Modal = ({ onClick, children }) => {
+export const Modal = ({ onClick,  children}) => {
   return (
-    <div className="modal-overlay" onClick={onClick}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <ModalOverlay className="modal-overlay" onClick={onClick}>
+      <ModalContainer className="modal-content" onClick={(e) => e.stopPropagation()}>
         {children}
-      </div>
-    </div>
+      </ModalContainer>
+    </ModalOverlay>
   );
 };
 
