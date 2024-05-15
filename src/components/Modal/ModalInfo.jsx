@@ -3,22 +3,25 @@ import PropTypes from 'prop-types';
 
 export const ModalInfo = ({ character, closeModal }) => {
   return (
-      <div onClick={closeModal}>
+      <div onClick={closeModal} >
           <img
             src={character.image} 
             alt={character.name}
           />
-          <h2>{character.name}</h2>         
-          <p>Status: {character.status}</p>          
+      <h2>{character.name}</h2>  
+      <div className="bg-blue-500">
+                  <p>Status: {character.status}</p>          
           <p>Gender: {character.gender}</p>
           <p>Species: {character.species}</p>
           <p>Location: {character.location.name}</p>         
-          <p>Created: {character.created}</p>          
+          <p>Created: {character.created}</p>  
+      </div>
+        
     </div>
   );
 };
 
 ModalInfo.propTypes = {
-  character: PropTypes.string.isRequired,
-  closeModal: PropTypes.string.isRequired,
+  character: PropTypes.any.isRequired,
+  closeModal: PropTypes.any.isRequired,
 }

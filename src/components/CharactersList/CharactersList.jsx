@@ -1,8 +1,8 @@
-import './CharactersList.css'
 import React, { useState } from 'react';
 import { Modal } from '../Modal/Modal';
 import { ModalInfo } from '../Modal/ModalInfo';
 import PropTypes from 'prop-types';
+import { LIST } from './CharactersList.styled';
 
 const CharactersList = ({ characters }) => {
   const [showModal, setShowModal] = useState(false);
@@ -14,7 +14,7 @@ const CharactersList = ({ characters }) => {
   };
     
   return (
-    <ul className='characters-list-container'>
+    <LIST>
       {characters.map(character => (
         <li key={character.id}>
           <img 
@@ -30,12 +30,12 @@ const CharactersList = ({ characters }) => {
           <ModalInfo character={selectedCharacter} closeModal={() => setShowModal(false)} />
         </Modal>
       )}
-    </ul>
+    </LIST>
   );
 };
 
 CharactersList.propTypes = {
-  characters: PropTypes.string.isRequired
+  characters: PropTypes.array.isRequired
 }
 
 export default CharactersList;

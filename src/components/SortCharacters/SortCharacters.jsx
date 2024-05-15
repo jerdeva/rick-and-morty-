@@ -1,7 +1,7 @@
 import { useState } from "react"
-import '../CharactersList/CharactersList.css'
 import React from "react";
 import PropTypes from 'prop-types';
+import { BTN } from "../CharactersList/CharactersList.styled";
 
 export const SortCharacters = ({ update, data }) => {
     
@@ -18,12 +18,12 @@ export const SortCharacters = ({ update, data }) => {
     
     return (
         <div>
-            <button className="btn" onClick={handleSort}>Sort by name</button>
+            <BTN className="btn" onClick={handleSort}>Sort by name</BTN>
         </div>
     );
 };
 
 SortCharacters.propTypes = {
-  update: PropTypes.string.isRequired,
-  data: PropTypes.string.isRequired,
+  update: PropTypes.any.isRequired,
+  data: PropTypes.array.isRequired,
 }

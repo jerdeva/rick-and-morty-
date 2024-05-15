@@ -3,7 +3,8 @@ import { getAllCharacters } from '../Api/Api';
 import CharactersList from '../CharactersList/CharactersList';
 import { SortCharacters } from '../SortCharacters/SortCharacters';
 import FilterCharacters from '../FilterCharacters/FilterCharacters';
-import '../CharactersList/CharactersList.css'
+import { BTN, CONTAINER } from '../CharactersList/CharactersList.styled';
+
 
 const Home = () => {
     const [allCharacters, setAllCharacters] = useState([]);
@@ -50,11 +51,11 @@ const Home = () => {
             <FilterCharacters filter={handleFilter}/>
             <SortCharacters update={updateCharacters} data={filteredCharacters} />
             <CharactersList characters={currentCharacters} />
-            <div>
-                <button  className='btn' onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
+            <CONTAINER>
+                <BTN  className='btn' onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Previous</BTN>
                 <span>{currentPage}</span>
-                <button className='btn'  onClick={() => setCurrentPage(currentPage + 1)} disabled={indexOfLastCharacter >= filteredCharacters.length}>Next</button>
-            </div>
+                <BTN className='btn'  onClick={() => setCurrentPage(currentPage + 1)} disabled={indexOfLastCharacter >= filteredCharacters.length}>Next</BTN>
+            </CONTAINER>
         </div>
     );
 };
